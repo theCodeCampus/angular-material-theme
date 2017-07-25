@@ -1,0 +1,50 @@
+@import '~@angular/material/_theming.scss';
+
+// Include the common styles for Angular Material. We include this here so that you only
+// have to load a single css file for Angular Material in your app.
+// Be sure that you only ever include this mixin once!
+@include mat-core();
+
+// Define the palettes for your theme using the Material Design palettes available in palette.scss
+// (imported above). For each palette, you can optionally specify a default, lighter, and darker
+// hue.
+@import "color-palettes";
+
+@import "typography";
+
+/**
+ * $assets-base-path as parameter with default value just to be able to override it for the demo.
+ * No need to pass in $assets-base-path in regular installations.
+ * Background: sass does not rewrite relative URLs. URLs will not be changed during compilation.
+ * Therefore URLs are not relative to the file they are written in but relative to the output of the sass compiler.
+ * In Angular context the CLI (webpack) will rewrite URLs and copy the assets of node modules. with ~ we can use a
+ * quasi absolute path starting at our node_modules folder.
+ * If the theme is not installed as a package, the user has to adjust the path (should be relevant for the demo only).
+ */
+@mixin tcc-angular-material-theme($assets-base-path: '~@thecodecampus/angular-material-theme/src/assets') {
+
+  $tcc-primary: mat-palette($tcc-orange);
+  $tcc-accent: mat-palette($tcc-blue);
+
+  // Create the theme object (a Sass map containing all of the palettes).
+  $tcc-theme: mat-light-theme($tcc-primary, $tcc-accent);
+
+  // Include theme styles for core and each component used in your app.
+  // Alternatively, you can import and @include the theme mixins for each component
+  // that you are using.
+  @include angular-material-theme($tcc-theme);
+
+  @include tcc-font-faces($fonts-base-path: $assets-base-path + '/fonts');
+
+  $custom-typography: mat-typography-config(
+    $font-family: $tcc-font-family-quoted
+  );
+
+  @include angular-material-typography($custom-typography);
+
+  body {
+    font-family: $tcc-font-family;
+  }
+}
+
+

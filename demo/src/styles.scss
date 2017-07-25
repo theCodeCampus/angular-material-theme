@@ -1,0 +1,6 @@
+// important to import theme in global style to enable overlay, popups like md-select and dialogs
+@import "style/angular-material-theme";
+
+body {
+  margin: 0;
+}

@@ -1,0 +1,21 @@
+{
+  "name": "@thecodecampus/angular-material-theme",
+  "version": "1.0.0",
+  "description": "Angular Material Theme for theCodeCampus",
+  "author": "W11K GmbH",
+  "contributors": [
+    "Can Kattwinkel",
+    "Philipp Burgmer"
+  ],
+  "license": "SEE LICENSE IN license.md",
+  "dependencies": {},
+  "peerDependencies": {
+    "@angular/material": "^2.0.0-beta.8"
+  },
+  "devDependencies": {
+    "@angular/material": "^2.0.0-beta.8",
+    "@angular/cdk": "2.0.0-beta.8",
+    "@angular/core": "^4.0.0",
+    "@angular/common": "^4.0.0"
+  }
+}
