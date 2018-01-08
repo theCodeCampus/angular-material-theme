@@ -1,5 +1,5 @@
 // should be one string because it will be send to unquote function
-$tcc-font-family:  'Aller', 'sans-serif';
+$tcc-font-family:  'Aller', 'sans-serif' !default;
 $tcc-font-family-quoted:  quote($tcc-font-family);
 
 @mixin tcc-font-faces($fonts-base-path) {

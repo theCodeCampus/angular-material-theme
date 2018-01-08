@@ -29,7 +29,7 @@ $tcc-orange: (
     A400 : #000000,
     A700 : #000000,
   )
-);
+) !default;
 
 $tcc-blue: (
   50 : #e5e5e7,
@@ -62,4 +62,4 @@ $tcc-blue: (
     A400 : #ffffff,
     A700 : #ffffff,
   )
-);
+) !default;

@@ -23,11 +23,11 @@
  */
 @mixin tcc-angular-material-theme($assets-base-path: '~@thecodecampus/angular-material-theme/src/assets') {
 
-  $tcc-primary: mat-palette($tcc-orange);
-  $tcc-accent: mat-palette($tcc-blue);
+  $tcc-primary: mat-palette($tcc-orange) !default;
+  $tcc-accent: mat-palette($tcc-blue) !default;
 
   // Create the theme object (a Sass map containing all of the palettes).
-  $tcc-theme: mat-light-theme($tcc-primary, $tcc-accent);
+  $tcc-theme: mat-light-theme($tcc-primary, $tcc-accent) !default;
 
   // Include theme styles for core and each component used in your app.
   // Alternatively, you can import and @include the theme mixins for each component
@@ -38,7 +38,7 @@
 
   $custom-typography: mat-typography-config(
     $font-family: $tcc-font-family-quoted
-  );
+  ) !default;
 
   @include angular-material-typography($custom-typography);
 
