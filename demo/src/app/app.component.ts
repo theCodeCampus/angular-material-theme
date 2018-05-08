@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import {MdDialog} from '@angular/material';
+import {MatDialog} from '@angular/material';
 import {DialogComponent} from './dialog/dialog.component';
 
 @Component({
@@ -7,11 +7,11 @@ import {DialogComponent} from './dialog/dialog.component';
   templateUrl: './app.component.html',
   styleUrls: [
     './app.component.scss',
-    './../style/angular-material-theme.scss'
+    // './../style/angular-material-theme.scss'
   ]
 })
 export class AppComponent {
-  constructor(private dialog: MdDialog) {
+  constructor(private dialog: MatDialog) {
 
   }
 

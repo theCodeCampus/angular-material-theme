@@ -10,12 +10,12 @@
   "license": "SEE LICENSE IN license.md",
   "dependencies": {},
   "peerDependencies": {
-    "@angular/material": "^2.0.0-beta.8"
+    "@angular/material": "^6.0.0"
   },
   "devDependencies": {
-    "@angular/material": "^2.0.0-beta.8",
-    "@angular/cdk": "2.0.0-beta.8",
-    "@angular/core": "^4.0.0",
-    "@angular/common": "^4.0.0"
+    "@angular/material": "^6.0.0",
+    "@angular/cdk": "^6.0.0",
+    "@angular/core": "^6.0.0",
+    "@angular/common": "^6.0.0"
   }
 }

@@ -2,7 +2,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
-import {MdButtonModule, MdDialogModule, MdToolbarModule} from '@angular/material';
+import {MatButtonModule, MatDialogModule, MatToolbarModule} from '@angular/material';
 import { DialogComponent } from './dialog/dialog.component';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 
@@ -14,9 +14,9 @@ import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
-    MdDialogModule,
-    MdButtonModule,
-    MdToolbarModule
+    MatDialogModule,
+    MatButtonModule,
+    MatToolbarModule
   ],
   entryComponents: [
     DialogComponent

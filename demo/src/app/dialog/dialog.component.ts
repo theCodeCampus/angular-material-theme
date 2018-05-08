@@ -5,7 +5,7 @@ import { Component, OnInit } from '@angular/core';
   templateUrl: './dialog.component.html',
   styleUrls: [
     './dialog.component.scss',
-    './../../style/angular-material-theme.scss'
+    // './../../style/angular-material-theme.scss'
   ]
 })
 export class DialogComponent implements OnInit {
