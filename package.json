@@ -7,7 +7,12 @@
     "Can Kattwinkel",
     "Philipp Burgmer"
   ],
-  "license": "SEE LICENSE IN license.md",
+  "homepage": "https://github.com/theCodeCampus/angular-material-theme",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/theCodeCampus/angular-material-theme.git"
+  },
+  "license": "CC BY-NC-ND 4.0",
   "dependencies": {},
   "peerDependencies": {
     "@angular/material": "^6.0.0"
