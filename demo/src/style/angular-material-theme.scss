@@ -3,3 +3,4 @@
 // override $assets-base-path via parameter because sass does not rewrite relative URLs
 // URLs in sass are always behave like relative URLs in the browser (relative to resulting / loaded CSS file)
 @include tcc-angular-material-theme($assets-base-path: '/assets');
+//@include tcc-angular-material-dark-theme($assets-base-path: '/assets');
