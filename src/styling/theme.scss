@@ -47,4 +47,28 @@
   }
 }
 
+@mixin tcc-angular-material-dark-theme($assets-base-path: '~@thecodecampus/angular-material-theme/src/assets') {
 
+  $tcc-primary: mat-palette($tcc-orange) !default;
+  $tcc-accent: mat-palette($tcc-blue) !default;
+
+  // Create the theme object (a Sass map containing all of the palettes).
+  $tcc-theme: mat-dark-theme($tcc-primary, $tcc-accent) !default;
+
+  // Include theme styles for core and each component used in your app.
+  // Alternatively, you can import and @include the theme mixins for each component
+  // that you are using.
+  @include angular-material-theme($tcc-theme);
+
+  @include tcc-font-faces($fonts-base-path: $assets-base-path + '/fonts');
+
+  $custom-typography: mat-typography-config(
+          $font-family: $tcc-font-family-quoted
+  ) !default;
+
+  @include angular-material-typography($custom-typography);
+
+  body {
+    font-family: $tcc-font-family;
+  }
+}
