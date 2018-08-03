@@ -5,12 +5,10 @@
 // Be sure that you only ever include this mixin once!
 @include mat-core();
 
-// Define the palettes for your theme using the Material Design palettes available in palette.scss
-// (imported above). For each palette, you can optionally specify a default, lighter, and darker
-// hue.
 @import "color-palettes";
-
 @import "typography";
+
+$tcc-angular-material-theme-assets-base-path-node: '~@thecodecampus/angular-material-theme/src/assets';
 
 /**
  * $assets-base-path as parameter with default value just to be able to override it for the demo.
@@ -21,17 +19,13 @@
  * quasi absolute path starting at our node_modules folder.
  * If the theme is not installed as a package, the user has to adjust the path (should be relevant for the demo only).
  */
-@mixin tcc-angular-material-theme($assets-base-path: '~@thecodecampus/angular-material-theme/src/assets') {
+@mixin tcc-angular-material-theme($assets-base-path: $tcc-angular-material-theme-assets-base-path-node, $themeFun: get_function(mat-light-theme)) {
 
   $tcc-primary: mat-palette($tcc-orange) !default;
   $tcc-accent: mat-palette($tcc-blue) !default;
 
-  // Create the theme object (a Sass map containing all of the palettes).
-  $tcc-theme: mat-light-theme($tcc-primary, $tcc-accent) !default;
+  $tcc-theme: call($themeFun, $tcc-primary, $tcc-accent) !default;
 
-  // Include theme styles for core and each component used in your app.
-  // Alternatively, you can import and @include the theme mixins for each component
-  // that you are using.
   @include angular-material-theme($tcc-theme);
 
   @include tcc-font-faces($fonts-base-path: $assets-base-path + '/fonts');
@@ -47,28 +41,6 @@
   }
 }
 
-@mixin tcc-angular-material-dark-theme($assets-base-path: '~@thecodecampus/angular-material-theme/src/assets') {
-
-  $tcc-primary: mat-palette($tcc-orange) !default;
-  $tcc-accent: mat-palette($tcc-blue) !default;
-
-  // Create the theme object (a Sass map containing all of the palettes).
-  $tcc-theme: mat-dark-theme($tcc-primary, $tcc-accent) !default;
-
-  // Include theme styles for core and each component used in your app.
-  // Alternatively, you can import and @include the theme mixins for each component
-  // that you are using.
-  @include angular-material-theme($tcc-theme);
-
-  @include tcc-font-faces($fonts-base-path: $assets-base-path + '/fonts');
-
-  $custom-typography: mat-typography-config(
-          $font-family: $tcc-font-family-quoted
-  ) !default;
-
-  @include angular-material-typography($custom-typography);
-
-  body {
-    font-family: $tcc-font-family;
-  }
+@mixin tcc-angular-material-dark-theme($assets-base-path: $tcc-angular-material-theme-assets-base-path-node) {
+  @include tcc-angular-material-theme($assets-base-path, get_function(mat-dark-theme));
 }
