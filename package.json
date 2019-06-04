@@ -1,6 +1,6 @@
 {
   "name": "@thecodecampus/angular-material-theme",
-  "version": "2.1.0",
+  "version": "2.2.0",
   "description": "Angular Material Theme for theCodeCampus",
   "author": "W11K GmbH",
   "contributors": [
@@ -13,7 +13,7 @@
     "type": "git",
     "url": "https://github.com/theCodeCampus/angular-material-theme.git"
   },
-  "license": "CC BY-NC-ND 4.0",
+  "license": "CC-BY-NC-ND-4.0",
   "dependencies": {},
   "peerDependencies": {
     "@angular/material": "^6.0.0 || ^7.0.0 || ^8.0.0"
