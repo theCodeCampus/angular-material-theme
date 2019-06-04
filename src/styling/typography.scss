@@ -1,6 +1,6 @@
 // should be one string because it will be send to unquote function
 $tcc-font-family:  'Aller', 'sans-serif' !default;
-$tcc-font-family-quoted:  quote($tcc-font-family);
+$tcc-font-family-quoted:  "#{$tcc-font-family}" !default;
 
 @mixin tcc-font-faces($fonts-base-path) {
   @font-face {
