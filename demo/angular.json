@@ -118,5 +118,8 @@
       }
     }
   },
-  "defaultProject": "tcc-angular-material-theme-demo"
+  "defaultProject": "tcc-angular-material-theme-demo",
+  "cli": {
+    "analytics": false
+  }
 }
