@@ -28,3 +28,22 @@ inside your `index.html`
   <app-root></app-root>
 </body>
 ```
+
+## How to override colors or typography
+
+To override colors, you can use the variables `$tcc-primary` or `$tcc-accent`. For typography, you can use 
+the variable `$custom-typography`.
+
+To override the font family, use the variable `$tcc-font-family`.
+
+```scss
+// import theme
+@import '@thecodecampus/angular-material-theme/src/styling/theme';
+// import alternate font family
+@import '@fontsource/source-code-pro';
+
+// set $tcc-font-family before including the theme
+$tcc-font-family: "Source Code Pro";
+@include tcc-angular-material-theme();
+
+```
