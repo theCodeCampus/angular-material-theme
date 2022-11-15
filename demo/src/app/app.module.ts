@@ -11,17 +11,14 @@ import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 @NgModule({
   declarations: [
     AppComponent,
-    DialogComponent
+    DialogComponent,
   ],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
     MatDialogModule,
     MatButtonModule,
-    MatToolbarModule
-  ],
-  entryComponents: [
-    DialogComponent
+    MatToolbarModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

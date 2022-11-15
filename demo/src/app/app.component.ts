@@ -7,7 +7,6 @@ import {DialogComponent} from './dialog/dialog.component';
   templateUrl: './app.component.html',
   styleUrls: [
     './app.component.scss',
-    // './../style/angular-material-theme.scss'
   ]
 })
 export class AppComponent {

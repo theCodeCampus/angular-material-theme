@@ -1,5 +1,8 @@
-// important to import theme in global style to enable overlay, popups like md-select and dialogs
-@import "style/angular-material-theme";
+@use '@angular/material' as mat;
+@import '../../src/styling/theme';
+
+@include tcc-angular-material-theme($assets-base-path: '/assets');
+//@include tcc-angular-material-dark-theme($assets-base-path: '/assets');
 
 body {
   margin: 0;

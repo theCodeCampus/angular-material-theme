@@ -1,9 +1,10 @@
-@import '~@angular/material/theming';
-
+@use '@angular/material' as mat;
+@use 'sass:meta';
+@use 'sass:map';
 // Include the common styles for Angular Material. We include this here so that you only
 // have to load a single css file for Angular Material in your app.
 // Be sure that you only ever include this mixin once!
-@include mat-core();
+@include mat.core();
 
 @import "color-palettes";
 @import "typography";
@@ -19,28 +20,28 @@ $tcc-angular-material-theme-assets-base-path-node: '~@thecodecampus/angular-mate
  * quasi absolute path starting at our node_modules folder.
  * If the theme is not installed as a package, the user has to adjust the path (should be relevant for the demo only).
  */
-@mixin tcc-angular-material-theme($assets-base-path: $tcc-angular-material-theme-assets-base-path-node, $themeFun: get_function(mat-light-theme)) {
+@mixin tcc-angular-material-theme($assets-base-path: $tcc-angular-material-theme-assets-base-path-node, $themeFun: map.get(meta.module-functions(mat), "define-light-theme")) {
 
-  $tcc-primary: mat-palette($tcc-orange) !default;
-  $tcc-accent: mat-palette($tcc-blue) !default;
+        $tcc-primary: mat.define-palette($tcc-orange) !default;
+        $tcc-accent: mat.define-palette($tcc-blue) !default;
 
-  $tcc-theme: call($themeFun, $tcc-primary, $tcc-accent) !default;
+        $tcc-theme: meta.call($themeFun, $tcc-primary, $tcc-accent) !default;
 
-  @include angular-material-theme($tcc-theme);
+        @include mat.all-component-themes($tcc-theme);
 
-  @include tcc-font-faces($fonts-base-path: $assets-base-path + '/fonts');
+        @include tcc-font-faces($fonts-base-path: $assets-base-path + '/fonts');
 
-  $custom-typography: mat-typography-config(
-    $font-family: $tcc-font-family-quoted
-  ) !default;
+        $custom-typography: mat.define-typography-config(
+                $font-family: $tcc-font-family-quoted
+        ) !default;
 
-  @include angular-material-typography($custom-typography);
+        @include mat.all-component-typographies($custom-typography);
 
-  body {
-    font-family: $tcc-font-family;
-  }
+        body {
+                font-family: $tcc-font-family;
+        }
 }
 
 @mixin tcc-angular-material-dark-theme($assets-base-path: $tcc-angular-material-theme-assets-base-path-node) {
-  @include tcc-angular-material-theme($assets-base-path, get_function(mat-dark-theme));
+        @include tcc-angular-material-theme($assets-base-path, map.get(meta.module-functions(mat), "define-dark-theme"));
 }
