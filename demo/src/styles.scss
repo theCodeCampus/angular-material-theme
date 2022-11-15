@@ -1,8 +1,8 @@
 @use '@angular/material' as mat;
 @import '../../src/styling/theme';
 
-@include tcc-angular-material-theme($assets-base-path: '/assets');
-//@include tcc-angular-material-dark-theme($assets-base-path: '/assets');
+@include tcc-angular-material-theme();
+//@include tcc-angular-material-dark-theme();
 
 body {
   margin: 0;

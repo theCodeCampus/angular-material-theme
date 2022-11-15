@@ -1,50 +1,8 @@
+@import "@fontsource/noto-sans";
+
 // should be one string because it will be send to unquote function
-$tcc-font-family:  'Aller', 'sans-serif' !default;
-$tcc-font-family-quoted:  "#{$tcc-font-family}" !default;
+$tcc-font-family:  'Noto Sans', 'sans-serif' !default;
 
-@mixin tcc-font-faces($fonts-base-path) {
-  @font-face {
-    font-family: 'Aller';
-    src: url($fonts-base-path + '/aller/aller_rg-webfont.eot');
-    src: url($fonts-base-path + '/aller/aller_rg-webfont.eot?#iefix') format('embedded-opentype'),
-    url($fonts-base-path + '/aller/aller_rg-webfont.woff2') format('woff2'),
-    url($fonts-base-path + '/aller/aller_rg-webfont.woff') format('woff'),
-    url($fonts-base-path + '/aller/aller_rg-webfont.ttf') format('truetype');
-    font-weight: 400;
-    font-style: normal;
-  }
-
-  @font-face {
-    font-family: 'Aller';
-    src: url($fonts-base-path + '/aller/aller_it-webfont.eot');
-    src: url($fonts-base-path + '/aller/aller_it-webfont.eot?#iefix') format('embedded-opentype'),
-    url($fonts-base-path + '/aller/aller_it-webfont.woff2') format('woff2'),
-    url($fonts-base-path + '/aller/aller_it-webfont.woff') format('woff'),
-    url($fonts-base-path + '/aller/aller_it-webfont.ttf') format('truetype');
-    font-weight: 400;
-    font-style: italic;
-  }
-
-
-  @font-face {
-    font-family: 'Aller';
-    src: url($fonts-base-path + '/aller/aller_lt-webfont.eot');
-    src: url($fonts-base-path + '/aller/aller_lt-webfont.eot?#iefix') format('embedded-opentype'),
-    url($fonts-base-path + '/aller/aller_lt-webfont.woff2') format('woff2'),
-    url($fonts-base-path + '/aller/aller_lt-webfont.woff') format('woff'),
-    url($fonts-base-path + '/aller/aller_lt-webfont.ttf') format('truetype');
-    font-weight: 300;
-    font-style: normal;
-  }
-
-  @font-face {
-    font-family: 'Aller';
-    src: url($fonts-base-path + '/aller/aller_bd-webfont.eot');
-    src: url($fonts-base-path + '/aller/aller_bd-webfont.eot?#iefix') format('embedded-opentype'),
-    url($fonts-base-path + '/aller/aller_bd-webfont.woff2') format('woff2'),
-    url($fonts-base-path + '/aller/aller_bd-webfont.woff') format('woff'),
-    url($fonts-base-path + '/aller/aller_bd-webfont.ttf') format('truetype');
-    font-weight: 600;
-    font-style: normal;
-  }
+@function quoteFontFamily($font-family: $tcc-font-family) {
+  @return "#{$font-family}";
 }

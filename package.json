@@ -14,7 +14,9 @@
     "url": "https://github.com/theCodeCampus/angular-material-theme.git"
   },
   "license": "CC-BY-NC-ND-4.0",
-  "dependencies": {},
+  "dependencies": {
+    "@fontsource/noto-sans": "^4.5.11"
+  },
   "peerDependencies": {
     "@angular/material": ">=12"
   },
