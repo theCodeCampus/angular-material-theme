@@ -1,6 +1,6 @@
 {
   "name": "@thecodecampus/angular-material-theme",
-  "version": "3.0.0",
+  "version": "3.0.1",
   "description": "Angular Material Theme for theCodeCampus",
   "author": "W11K GmbH",
   "contributors": [
@@ -18,10 +18,10 @@
     "@fontsource/noto-sans": "^4.5.11"
   },
   "peerDependencies": {
-    "@angular/material": ">=12"
+    "@angular/material": ">=15"
   },
   "devDependencies": {
-    "@angular/cdk": "^14.2.7",
-    "@angular/material": "^14.2.7"
+    "@angular/cdk": "15.1.2",
+    "@angular/material": "15.1.2"
   }
 }
