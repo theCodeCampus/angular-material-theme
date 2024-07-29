@@ -69,10 +69,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "browserTarget": "tcc-angular-material-theme-demo:build:production"
+              "buildTarget": "tcc-angular-material-theme-demo:build:production"
             },
             "development": {
-              "browserTarget": "tcc-angular-material-theme-demo:build:development"
+              "buildTarget": "tcc-angular-material-theme-demo:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -80,7 +80,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "tcc-angular-material-theme-demo:build"
+            "buildTarget": "tcc-angular-material-theme-demo:build"
           }
         },
         "test": {
