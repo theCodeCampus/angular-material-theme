@@ -9,13 +9,13 @@
 @import "color-palettes";
 @import "typography";
 
-@mixin tcc-angular-material-theme($themeFun: map.get(meta.module-functions(mat), "define-light-theme")) {
+@mixin tcc-angular-material-theme($isDark: false) {
 
-  $tcc-primary: mat.define-palette($tcc-orange) !default;
-  $tcc-accent: mat.define-palette($tcc-blue) !default;
+  $tcc-primary: mat.m2-define-palette($tcc-orange) !default;
+  $tcc-accent: mat.m2-define-palette($tcc-blue) !default;
 
   $tcc-density: 0 !default;
-  $custom-typography: mat.define-typography-config(
+  $custom-typography: mat.m2-define-typography-config(
           $font-family: quoteFontFamily($tcc-font-family)
   ) !default;
   $tcc-colors: (
@@ -23,10 +23,24 @@
           accent: $tcc-accent,
   ) !default;
 
-  $tcc-theme: meta.call($themeFun, (
-          color: $tcc-colors,
-          typography: $custom-typography,
-          density: $tcc-density));
+  $tcc-theme: if($isDark,
+          mat.m2-define-dark-theme((
+                  color: (
+                          primary: $tcc-primary,
+                          accent: $tcc-accent
+                  ),
+                  typography: $custom-typography,
+                  density: $tcc-density
+          )),
+          mat.m2-define-light-theme((
+                  color: (
+                          primary: $tcc-primary,
+                          accent: $tcc-accent
+                  ),
+                  typography: $custom-typography,
+                  density: $tcc-density
+          ))
+  );
 
   @include mat.all-component-themes($tcc-theme);
 
@@ -35,6 +49,10 @@
   body {
     font-family: $tcc-font-family;
   }
+}
+
+@mixin tcc-angular-material-light-theme() {
+  @include tcc-angular-material-theme(false);
 }
 
 @mixin tcc-angular-material-dark-theme() {
